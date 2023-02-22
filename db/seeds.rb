@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+categories = %w[chinese italian japanese french belgian]
+
+puts 'dropping data base'
+Restaurant.destroy_all
+puts 'creating database'
+5.times do |index|
+  puts "creating #{index}-restaurant"
+  Restaurant.create!(
+    name: Faker::Restaurant.name,
+    address: Faker::Address.street_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    category: categories.sample
+  )
+  puts "#{index}-restaurant created"
+end
+
+puts 'data base created'

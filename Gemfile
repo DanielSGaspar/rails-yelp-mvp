@@ -61,5 +61,11 @@ group :development do
   # gem "spring"
 end
 
+#Simple form gem
+gem "simple_form", github: "heartcombo/simple_form"
+
+#Gem for faker
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
